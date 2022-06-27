@@ -1,0 +1,8 @@
+@font-face {
+    font-family: 'OMORI_GAME2';
+    src: url('OMORI_GAME2.woff2') format('woff2'),
+        url('OMORI_GAME2.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}

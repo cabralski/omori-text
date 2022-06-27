@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>Omori Text</title>
+
+	<link rel="stylesheet" href="./style/font.css">
+	<link rel="stylesheet" href="./style/style.css">
+
+</head>
+
+<body type="black">
+
+	<main>
+
+		<header id="square">
+			<img id="lamp" width="120px">
+			<p contenteditable spellcheck="false">type here...</p>
+		</header>
+
+		<div>
+			<a id="toggle_lamp">toggle lamp</a>
+			<a id="change_color">change color</a>
+			<a id="save_image">save image</a>
+		</div>
+
+	</main>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"
+		integrity="sha512-BNaRQnYJYiPSqHHDb58B0yaPfCu+Wgds8Gp/gU33kqBtgNS4tSPHuGibyoeqMV/TJlSKda6FXzoEyYGjTe+vXA=="
+		crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+		integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+		crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js"
+		integrity="sha512-csNcFYJniKjJxRWRV1R7fvnXrycHP6qDR21mgz1ZP55xY5d+aHLfo9/FcGDQLfn2IfngbAHd8LdfsagcCqgTcQ=="
+		crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+	<script>
+		const canvas_list = document.getElementById('canvas_list');
+
+		$("#toggle_lamp").click(() => {
+			$('#lamp').toggle('visible', 0)
+		})
+
+		$("#change_color").click(() => {
+			$('body').attr('type', (i, a) => a == "black" ? "white" : "black")
+		})
+
+		$("#save_image").click(() => {
+
+			html2canvas(document.getElementById('square'), {
+				foreignObjectRendering: true,
+				useCORS: true,
+			}).then(canvas => {
+				saveAs(canvas.toDataURL(), `omori-text.png`)
+			})
+
+		})
+	</script>
+
+</body>
+
+</html>

@@ -1,0 +1,87 @@
+html, body {
+    width: 100%;
+    padding: 20px 0px;
+    margin: 0px;
+}
+
+body[type="black"] {
+    background-color: #FFF;
+}
+
+body[type="white"] {
+    background-color: #000;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    user-select: none;
+
+    width: 640px;
+    height: 640px;
+}
+
+body[type="black"] a {
+    color: #000;
+}
+
+body[type="black"] header {
+    color: #FFF;
+    background-color: #000;
+}
+
+body[type="black"] img {
+    content: url('../img/lamp_black.png');
+}
+
+body[type="white"] a {
+    color: #FFF;
+}
+
+body[type="white"] header {
+    color: #000;
+    background-color: #FFF;
+}
+
+body[type="white"] img {
+    content: url('../img/lamp_white.png');
+}
+
+img {
+    position: absolute;
+    top: 40px;
+}
+
+p, a {
+    font-family: 'OMORI_GAME2';
+}
+
+p {
+    text-align: center;
+    font-size: 3em;
+    line-height: 0.9em;
+    max-width: 640px;
+    max-height: 640px;
+    min-width: 32px;
+}
+
+a {
+    font-size: 2em;
+    text-decoration: underline;
+    cursor: pointer;
+    user-select: none;
+}
+
+div {
+    user-select: none;
+}
